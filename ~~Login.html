@@ -1,0 +1,49 @@
+
+<html >
+<head><style needdelete>td {border-style:dotted;border-width:1px;border-color:#aaaaaa;} table {border-style:dashed;border-width:1px;border-color:#aaaaaa;}</style>
+<meta ccsServiceable="true" http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
+
+<title>Login</title>
+
+<link ccsServiceable="true" rel="stylesheet" type="text/css" href="Styles/Fresh/Style_doctype.css" ccs_href="Styles/Fresh/Style_doctype.css"/>
+<link ccsServiceable="true" rel="stylesheet" type="text/css" href="Styles/Fresh/jquery-ui.css" ccs_href="Styles/Fresh/jquery-ui.css"/>
+
+</head>
+<body>
+
+<span ccsId="13" ccsName="Header" ccsBlockIsWhiteSpace="true" style="white-space:nowrap;border-color:#96e593;border-style:solid;border-width:1px" ccsType="Component" ccsServiceable="true" contentEditable="True">Header</span><br>
+<span contentEditable="true"  style="display:block;border: 1px solid #DCDCDC;" ccsType="Component" ccsDesignColorSelection="true" ccsId="2" ccsServiceable="true" ccsName="Login1" >
+
+<form ccsServiceable="true" id="Login1" method="post" name="{HTMLFormName}" action="{Action}">
+  <div align=center>
+    
+  </div>
+  
+  <h2>Login</h2>
+  <table>
+    <!-- BEGIN Error -->
+    <tr id="{@error-block}">
+      <td colspan="2">{Error}</td>
+    </tr>
+    <!-- END Error -->
+    <tr>
+      <td><span ccsServiceable="true" ccsHtmlTag="label" ccsHtmlTag_for="Login1login">Login</span></td> 
+      <td><input ccsServiceable="true" ccsId="4" ccsName="login" ccsType="Component" type="text" id="Login1login" value="{login}" maxlength="100" name="{login_Name}" ccssize="20"/></td>
+    </tr>
+ 
+    <tr>
+      <td><span ccsServiceable="true" ccsHtmlTag="label" ccsHtmlTag_for="Login1password">Password</span></td> 
+      <td><input ccsServiceable="true" ccsId="5" ccsName="password" ccsType="Component" type="password" id="Login1password" value="{password}" maxlength="100" name="{password_Name}" ccssize="20"/></td>
+    </tr>
+ 
+    <tr>
+      <td style="TEXT-ALIGN: right" colspan="2">
+        <input ccsServiceable="true" ccsId="3" ccsName="Button_DoLogin" ccsType="Component" ccsExtendedHtml="true" type="submit" id="Login1Button_DoLogin" value="Login" alt="Login" name="{Button_Name}"/></td>
+    </tr>
+  </table>
+</form>
+
+&nbsp;</span>
+
+</body>
+</html>

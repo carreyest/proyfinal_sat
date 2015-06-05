@@ -1,0 +1,455 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<title>periodos3</title>
+<meta name="GENERATOR" content="CodeCharge Studio 5.1.1.18990">
+<link rel="stylesheet" type="text/css" href="Styles/{CCS_Style}/Style_doctype.css">
+<script language="JavaScript" type="text/javascript">
+//Begin CCS script
+//Include Common JSFunctions @1-2504AB44
+</script>
+<script src="ClientI18N.php?file=Globalize.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+//End Include Common JSFunctions
+
+//Include User Scripts @1-FA240378
+</script>
+<link rel="stylesheet" type="text/css" href="Styles/{CCS_Style}/ccs-jquery-ui-calendar.css">
+{page:scriptIncludes}
+<script type="text/javascript">
+//End Include User Scripts
+
+//Common Script Start @1-8BFA436B
+jQuery(function ($) {
+    var features = { };
+    var actions = { };
+    var params = { };
+//End Common Script Start
+
+//Controls Selecting @1-4ED01991
+    $('body').ccsBind(function() {
+        features["Panel12Panel2periodos_carga1fecha_limiteInlineDatePicker1"] = $('*:ccsControl(Panel12, Panel2, periodos_carga1, fecha_limite)');
+        features["Panel12Panel2DialogPanel1"] = $('*:ccsControl(Panel12, Panel2)');
+        features["Panel12UpdatePanel1"] = $('*:ccsControl(Panel12)');
+        features["Panel12condition_for_show"] = $('*:ccsControl(Panel12)');
+        features["Panel12condition_for_hide"] = $('*:ccsControl(Panel12)');
+        features["Panel12ccc_link_Condition"] = $('*:ccsControl(Panel12)');
+        features["Panel12ccc_submit_Condition"] = $('*:ccsControl(Panel12)');
+        features["Panel12ccc_others_Condition"] = $('*:ccsControl(Panel12)');
+    });
+//End Controls Selecting
+
+//Feature Parameters @1-2ACFCD41
+    params["Panel12Panel2periodos_carga1fecha_limiteInlineDatePicker1"] = { 
+        dateFormat: "dd/MM/yyyy hh:MM",
+        isWeekend: true
+    };
+    params["Panel12Panel2DialogPanel1"] = { 
+        title: "Agregar/Editar Periodos de Carga ",
+        modal: true,
+        autoOpen: false
+    };
+    params["Panel12UpdatePanel1"] = {
+        name: "Panel12"
+    };
+//End Feature Parameters
+
+//Feature Init @1-43B27CC2
+    features["Panel12Panel2periodos_carga1fecha_limiteInlineDatePicker1"].ccsBind(function() {
+        this.ccsDateTimePicker(params["Panel12Panel2periodos_carga1fecha_limiteInlineDatePicker1"]);
+    });
+    features["Panel12Panel2DialogPanel1"].ccsBind(function() {
+        this.ccsDialog(params["Panel12Panel2DialogPanel1"]);
+    });
+    features["Panel12UpdatePanel1"].ccsBind(function() {
+        this.ccsUpdatePanel(params["Panel12UpdatePanel1"]);
+    });
+//End Feature Init
+
+//DialogPanel1 show Entry Point @85-BFC0EF60
+    actions["Panel12Panel2DialogPanel1_show"] = function () {
+        features["Panel12Panel2DialogPanel1"].ccsDialog("show");
+        return false;
+    };
+//End DialogPanel1 show Entry Point
+
+//DialogPanel1 hide Entry Point @85-74E0110B
+    actions["Panel12Panel2DialogPanel1_hide"] = function () {
+        features["Panel12Panel2DialogPanel1"].ccsDialog("hide");
+    };
+//End DialogPanel1 hide Entry Point
+
+//condition_for_show start Entry Point Start @58-F8306D2F
+    actions["Panel12condition_for_show_start"] = function (eventType, parameters) {
+//End condition_for_show start Entry Point Start
+
+//condition_for_show start Entry Point Body @58-476A505C
+        var self = $("*:ccsSameLevelControl(" + $(this).ccsId() + ", Panel12)");
+        if (true==(params["click"] == "link")) {
+            self.trigger($.Event("true.condition_for_show"), {});
+        } else {
+            self.trigger($.Event("false.condition_for_show"), {});
+        }
+//End condition_for_show start Entry Point Body
+
+//condition_for_show start Entry Point End @58-6A43FC60
+    };
+//End condition_for_show start Entry Point End
+
+//condition_for_hide start Entry Point Start @63-E4743A1F
+    actions["Panel12condition_for_hide_start"] = function (eventType, parameters) {
+//End condition_for_hide start Entry Point Start
+
+//condition_for_hide start Entry Point Body @63-CF8CBBC4
+        var self = $("*:ccsSameLevelControl(" + $(this).ccsId() + ", Panel12)");
+        if (true==(params["click"] == "submit" && $("#ErrorBlock").length == 0)) {
+            self.trigger($.Event("true.condition_for_hide"), {});
+        } else {
+            self.trigger($.Event("false.condition_for_hide"), {});
+        }
+//End condition_for_hide start Entry Point Body
+
+//condition_for_hide start Entry Point End @63-6A43FC60
+    };
+//End condition_for_hide start Entry Point End
+
+//ccc_link_Condition start Entry Point Start @68-EE7C6A25
+    actions["Panel12ccc_link_Condition_start"] = function (eventType, parameters) {
+//End ccc_link_Condition start Entry Point Start
+
+//ccc_link_Condition start Entry Point Body @68-2F4C38A1
+        var self = $("*:ccsSameLevelControl(" + $(this).ccsId() + ", Panel12)");
+        if (true==(params["click"] = "link")) {
+            self.trigger($.Event("true.ccc_link_Condition"), {});
+        } else {
+            self.trigger($.Event("false.ccc_link_Condition"), {});
+        }
+//End ccc_link_Condition start Entry Point Body
+
+//ccc_link_Condition start Entry Point End @68-6A43FC60
+    };
+//End ccc_link_Condition start Entry Point End
+
+//ccc_submit_Condition start Entry Point Start @79-C70D9179
+    actions["Panel12ccc_submit_Condition_start"] = function (eventType, parameters) {
+//End ccc_submit_Condition start Entry Point Start
+
+//ccc_submit_Condition start Entry Point Body @79-BDDF6844
+        var self = $("*:ccsSameLevelControl(" + $(this).ccsId() + ", Panel12)");
+        if (true==(params["click"] = "submit")) {
+            self.trigger($.Event("true.ccc_submit_Condition"), {});
+        } else {
+            self.trigger($.Event("false.ccc_submit_Condition"), {});
+        }
+//End ccc_submit_Condition start Entry Point Body
+
+//ccc_submit_Condition start Entry Point End @79-6A43FC60
+    };
+//End ccc_submit_Condition start Entry Point End
+
+//ccc_others_Condition start Entry Point Start @94-4012BFB8
+    actions["Panel12ccc_others_Condition_start"] = function (eventType, parameters) {
+//End ccc_others_Condition start Entry Point Start
+
+//ccc_others_Condition start Entry Point Body @94-BD048BDD
+        var self = $("*:ccsSameLevelControl(" + $(this).ccsId() + ", Panel12)");
+        if (true==(params["click"] = "")) {
+            self.trigger($.Event("true.ccc_others_Condition"), {});
+        } else {
+            self.trigger($.Event("false.ccc_others_Condition"), {});
+        }
+//End ccc_others_Condition start Entry Point Body
+
+//ccc_others_Condition start Entry Point End @94-6A43FC60
+    };
+//End ccc_others_Condition start Entry Point End
+
+//Event Binding @1-0878F695
+    features["Panel12condition_for_show"].ccsBind(function() {
+        this.bind("true.condition_for_show", actions["Panel12Panel2DialogPanel1_show"]);
+    });
+    features["Panel12condition_for_hide"].ccsBind(function() {
+        this.bind("true.condition_for_hide", actions["Panel12Panel2DialogPanel1_hide"]);
+    });
+    features["Panel12UpdatePanel1"].ccsBind(function() {
+        this.bind("afterrefresh.ccsUpdatePanel", actions["Panel12condition_for_show_start"]);
+    });
+    features["Panel12UpdatePanel1"].ccsBind(function() {
+        this.bind("afterrefresh.ccsUpdatePanel", actions["Panel12condition_for_hide_start"]);
+    });
+    features["Panel12Panel2DialogPanel1"].ccsBind(function() {
+        this.bind("show.ccsDialog", actions["Panel12ccc_others_Condition_start"]);
+    });
+    features["Panel12Panel2DialogPanel1"].ccsBind(function() {
+        this.bind("hide.ccsDialog", actions["Panel12ccc_others_Condition_start"]);
+    });
+    $('*:ccsControl(Panel12, periodos_carga, periodos_carga_Insert)').ccsBind(function() {
+        this.bind("click", actions["Panel12ccc_link_Condition_start"]);
+    });
+    $('*:ccsControl(Panel12, periodos_carga, id_periodo)').ccsBind(function() {
+        this.bind("click", actions["Panel12ccc_link_Condition_start"]);
+    });
+    $('*:ccsControl(Panel12, Panel2, periodos_carga1)').ccsBind(function() {
+        this.bind("submit", actions["Panel12ccc_submit_Condition_start"]);
+    });
+//End Event Binding
+
+//Plugin Calls @1-9451B7CD
+    $('*:ccsControl(Panel12, Panel2, periodos_carga1, Button_Delete)').ccsBind(function() {
+        this.bind("click", function(){ $("body").data("disableValidation", true); });
+    });
+    $('*:ccsControl(Panel12, Panel2, periodos_carga1, Button_Cancel)').ccsBind(function() {
+        this.bind("click", function(){ $("body").data("disableValidation", true); });
+    });
+//End Plugin Calls
+
+//Common Script End @1-562554DE
+});
+//End Common Script End
+
+//End CCS script
+</script>
+<link rel="stylesheet" type="text/css" href="Styles/Austere4/Style_Components_doctype.css">
+<link rel="stylesheet" type="text/css" href="Styles/Austere4/jquery-ui.css">
+</head>
+<body>
+{Header} <br>
+<!-- BEGIN Panel Panel12 -->
+<!-- BEGIN Record periodos_cargaSearch -->
+<form id="Panel12periodos_cargaSearch" method="post" name="{HTMLFormName}" action="{Action}">
+  <table class="MainTable" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="top">
+        <table class="HeaderAustere4" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="HeaderLeftAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+            <td class="thAustere4"><strong>Buscar</strong></td> 
+            <td class="HeaderRightAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td>
+          </tr>
+        </table>
+ 
+        <table class="RecordAustere4" cellspacing="0" cellpadding="0">
+          <!-- BEGIN Error -->
+          <tr id="{@error-block}" class="ErrorAustere4">
+            <td colspan="2">{Error}</td>
+          </tr>
+          <!-- END Error -->
+          <tr class="ControlsAustere4">
+            <td class="thAustere4"><label for="Panel12periodos_cargaSearchs_id_proveedor">Proveedor</label></td> 
+            <td>
+              <select id="Panel12periodos_cargaSearchs_id_proveedor" name="{s_id_proveedor_Name}">
+                <option selected value="">Seleccionar Valor</option>
+                {s_id_proveedor_Options}
+              </select>
+ </td>
+          </tr>
+ 
+          <tr class="ControlsAustere4">
+            <td class="thAustere4"><label for="Panel12periodos_cargaSearchs_anio">Anio</label></td> 
+            <td><input type="text" id="Panel12periodos_cargaSearchs_anio" value="{s_anio}" maxlength="5" size="5" name="{s_anio_Name}"></td>
+          </tr>
+ 
+          <tr class="ControlsAustere4">
+            <td class="thAustere4"><label for="Panel12periodos_cargaSearchs_nombre_mes">Nombre Mes</label></td> 
+            <td>
+              <select id="Panel12periodos_cargaSearchs_nombre_mes" name="{s_nombre_mes_Name}">
+                <option selected value="">Seleccionar Valor</option>
+                {s_nombre_mes_Options}
+              </select>
+ </td>
+          </tr>
+ 
+          <tr class="BottomAustere4">
+            <td style="TEXT-ALIGN: right" colspan="2">
+              <!-- BEGIN Button Button_DoSearch --><input type="submit" id="Panel12periodos_cargaSearchButton_DoSearch" class="ButtonAustere4" value="Buscar" alt="Buscar" name="{Button_Name}"><!-- END Button Button_DoSearch --></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>
+<!-- END Record periodos_cargaSearch --><br>
+<!-- BEGIN Grid periodos_carga -->
+<table id="Panel12periodos_carga" class="MainTable" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top">
+      <table class="HeaderAustere4" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="HeaderLeftAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+          <td class="thAustere4"><strong>Lista de Periodos de Carga </strong></td> 
+          <td class="HeaderRightAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td>
+        </tr>
+      </table>
+ 
+      <table class="GridAustere4" cellspacing="0" cellpadding="0">
+        <tr class="CaptionAustere4">
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_id_periodo --><span class="Sorter"><a href="{Sort_URL}" id="Panel12periodos_cargaSorter_id_periodo">Id Periodo</a> 
+          <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_id_periodo --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_anio --><span class="Sorter"><a href="{Sort_URL}" id="Panel12periodos_cargaSorter_anio">Anio</a> 
+          <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_anio --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_nombre_mes --><span class="Sorter"><a href="{Sort_URL}" id="Panel12periodos_cargaSorter_nombre_mes">Nombre Mes</a> 
+          <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_nombre_mes --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_mes --><span class="Sorter"><a href="{Sort_URL}" id="Panel12periodos_cargaSorter_mes">Mes</a> 
+          <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_mes --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_fecha_limite --><span class="Sorter"><a href="{Sort_URL}" id="Panel12periodos_cargaSorter_fecha_limite">Fecha Limite</a> 
+          <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_fecha_limite --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_num_intentos_permitidos --><span class="Sorter"><a href="{Sort_URL}" id="Panel12periodos_cargaSorter_num_intentos_permitidos">Num Intentos Permitidos</a> 
+          <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_num_intentos_permitidos --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_tipo_periodo --><span class="Sorter"><a href="{Sort_URL}" id="Panel12periodos_cargaSorter_tipo_periodo">Tipo Periodo</a> 
+          <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_tipo_periodo --></th>
+ 
+          <th scope="col">
+          <!-- BEGIN Sorter Sorter_id_proveedor --><span class="Sorter"><a href="{Sort_URL}" id="Panel12periodos_cargaSorter_id_proveedor">Id Proveedor</a> 
+          <!-- BEGIN Asc_On --><img alt="Ascendente" src="Styles/Austere4/Images/Asc.gif"><!-- END Asc_On -->
+          <!-- BEGIN Desc_On --><img alt="Descendente" src="Styles/Austere4/Images/Desc.gif"><!-- END Desc_On --></span><!-- END Sorter Sorter_id_proveedor --></th>
+        </tr>
+ 
+        <!-- BEGIN Row -->
+        <tr class="RowAustere4">
+          <td style="TEXT-ALIGN: right"><a href="{id_periodo_Src}" id="Panel12periodos_cargaid_periodo_{periodos_carga:rowNumber}">{id_periodo}</a>&nbsp;</td> 
+          <td style="TEXT-ALIGN: right">{anio}&nbsp;</td> 
+          <td>{nombre_mes}&nbsp;</td> 
+          <td style="TEXT-ALIGN: right">{mes}&nbsp;</td> 
+          <td>{fecha_limite}&nbsp;</td> 
+          <td style="TEXT-ALIGN: right">{num_intentos_permitidos}&nbsp;</td> 
+          <td>{tipo_periodo}&nbsp;</td> 
+          <td style="TEXT-ALIGN: right">{id_proveedor}&nbsp;</td>
+        </tr>
+ <!-- END Row -->
+        <!-- BEGIN NoRecords -->
+        <tr class="NoRecordsAustere4">
+          <td colspan="8">No hay registros</td>
+        </tr>
+        <!-- END NoRecords -->
+        <tr class="FooterAustere4">
+          <td colspan="8"><a href="{periodos_carga_Insert_Src}" id="Panel12periodos_cargaperiodos_carga_Insert">Agregar Nuevo</a>&nbsp; 
+            <!-- BEGIN Navigator Navigator --><span class="Navigator">Registro por página 
+            <select style="VERTICAL-ALIGN: middle" name="{FormName}PageSize" data-grid-size="{FormName}">
+              <option selected value="">-</option>
+ {PageSize_Options}
+            </select>
+ 
+            <!-- BEGIN First_On --><a href="{First_URL}">Inicio</a> <!-- END First_On -->
+            <!-- BEGIN First_Off -->Inicio <!-- END First_Off -->
+            <!-- BEGIN Prev_On --><a href="{Prev_URL}">Anterior</a> <!-- END Prev_On -->
+            <!-- BEGIN Prev_Off -->Anterior <!-- END Prev_Off -->&nbsp; 
+            <!-- BEGIN Pages -->
+            <!-- BEGIN Page_On --><a href="{Page_URL}">{Page_Number}</a>&nbsp;<!-- END Page_On -->
+            <!-- BEGIN Page_Off -->{Page_Number}&nbsp;<!-- END Page_Off --><!-- END Pages -->de &nbsp;{Total_Pages}&nbsp; 
+            <!-- BEGIN Next_On --><a href="{Next_URL}">Siguiente</a> <!-- END Next_On -->
+            <!-- BEGIN Next_Off -->Siguiente <!-- END Next_Off -->
+            <!-- BEGIN Last_On --><a href="{Last_URL}">Final</a> <!-- END Last_On -->
+            <!-- BEGIN Last_Off -->Final <!-- END Last_Off --></span><!-- END Navigator Navigator -->&nbsp;</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- END Grid periodos_carga --><br>
+<!-- BEGIN Panel Panel2 -->
+<!-- BEGIN Record periodos_carga1 -->
+<form id="Panel12Panel2periodos_carga1" method="post" name="{HTMLFormName}" action="{Action}">
+  <table class="MainTable" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td valign="top">
+        <table class="HeaderAustere4" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td class="HeaderLeftAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td> 
+            <td class="thAustere4"><strong>Agregar/Editar Periodos de Carga </strong></td> 
+            <td class="HeaderRightAustere4"><img alt="" src="Styles/Austere4/Images/Spacer.gif"></td>
+          </tr>
+        </table>
+ 
+        <table class="RecordAustere4" cellspacing="0" cellpadding="0">
+          <!-- BEGIN Error -->
+          <tr id="ErrorBlock" class="ErrorAustere4">
+            <td colspan="2">{Error}</td>
+          </tr>
+          <!-- END Error -->
+          <tr class="ControlsAustere4">
+            <td class="thAustere4"><label for="Panel12Panel2periodos_carga1anio">Anio</label></td> 
+            <td><input type="text" id="Panel12Panel2periodos_carga1anio" value="{anio}" maxlength="5" size="5" name="{anio_Name}"></td>
+          </tr>
+ 
+          <tr class="ControlsAustere4">
+            <td class="thAustere4"><label for="Panel12Panel2periodos_carga1nombre_mes">Nombre Mes</label></td> 
+            <td>
+              <select id="Panel12Panel2periodos_carga1nombre_mes" name="{nombre_mes_Name}">
+                <option selected value="">Seleccionar Valor</option>
+                {nombre_mes_Options}
+              </select>
+ </td>
+          </tr>
+ 
+          <tr class="ControlsAustere4">
+            <td class="thAustere4"><label for="Panel12Panel2periodos_carga1mes">Mes</label></td> 
+            <td><input type="text" id="Panel12Panel2periodos_carga1mes" value="{mes}" maxlength="5" size="5" name="{mes_Name}"></td>
+          </tr>
+ 
+          <tr class="ControlsAustere4">
+            <td class="thAustere4"><label for="Panel12Panel2periodos_carga1fecha_limite">Fecha Limite</label></td> 
+            <td><input type="text" id="Panel12Panel2periodos_carga1fecha_limite" value="{fecha_limite}" maxlength="100" size="8" name="{fecha_limite_Name}"></td>
+          </tr>
+ 
+          <tr class="ControlsAustere4">
+            <td class="thAustere4"><label for="Panel12Panel2periodos_carga1num_intentos_permitidos">Num Intentos Permitidos</label></td> 
+            <td><input type="text" id="Panel12Panel2periodos_carga1num_intentos_permitidos" value="{num_intentos_permitidos}" maxlength="5" size="5" name="{num_intentos_permitidos_Name}"></td>
+          </tr>
+ 
+          <tr class="ControlsAustere4">
+            <td class="thAustere4"><label for="Panel12Panel2periodos_carga1tipo_periodo">Tipo Periodo</label></td> 
+            <td>
+              <select id="Panel12Panel2periodos_carga1tipo_periodo" name="{tipo_periodo_Name}">
+                <option selected value="">Seleccionar Valor</option>
+                {tipo_periodo_Options}
+              </select>
+ </td>
+          </tr>
+ 
+          <tr class="ControlsAustere4">
+            <td class="thAustere4"><label for="Panel12Panel2periodos_carga1id_proveedor">Proveedor</label></td> 
+            <td>
+              <select id="Panel12Panel2periodos_carga1id_proveedor" name="{id_proveedor_Name}">
+                <option selected value="">Seleccionar Valor</option>
+                {id_proveedor_Options}
+              </select>
+ </td>
+          </tr>
+ 
+          <tr class="BottomAustere4">
+            <td style="TEXT-ALIGN: right" colspan="2">
+              <!-- BEGIN Button Button_Insert --><input type="submit" id="Panel12Panel2periodos_carga1Button_Insert" class="ButtonAustere4" value="Agregar" alt="Agregar" name="{Button_Name}"><!-- END Button Button_Insert -->
+              <!-- BEGIN Button Button_Update --><input type="submit" id="Panel12Panel2periodos_carga1Button_Update" class="ButtonAustere4" value="Enviar" alt="Enviar" name="{Button_Name}"><!-- END Button Button_Update -->
+              <!-- BEGIN Button Button_Delete --><input type="submit" id="Panel12Panel2periodos_carga1Button_Delete" class="ButtonAustere4" value="Borrar" alt="Borrar" name="{Button_Name}"><!-- END Button Button_Delete -->
+              <!-- BEGIN Button Button_Cancel --><input type="submit" id="Panel12Panel2periodos_carga1Button_Cancel" class="ButtonAustere4" value="Cancelar" alt="Cancelar" name="{Button_Name}"><!-- END Button Button_Cancel --></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</form>
+<!-- END Record periodos_carga1 --><!-- END Panel Panel2 --><br>
+<!-- END Panel Panel12 -->
+</body>
+</html>

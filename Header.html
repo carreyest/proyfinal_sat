@@ -1,0 +1,121 @@
+<meta content="text/html; charset=windows-1252" http-equiv="Content-Type">
+<script type="text/javascript"> 
+document.addEventListener("onload",hola());
+
+function hola(){
+ loadXMLDoc();
+        setInterval('loadXMLDoc()',60000);
+        
+        }
+function loadXMLDoc()
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+{// code for IE7+, Firefox, Chrome, Opera, Safari
+xmlhttp=new XMLHttpRequest();
+}
+else
+{// code for IE6, IE5
+xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function()
+{
+if (xmlhttp.readyState==4 && xmlhttp.status==200)
+{
+document.getElementById("clock").innerHTML=xmlhttp.responseText;
+}
+}
+xmlhttp.open("GET","clock.php",true);
+xmlhttp.send();
+}
+
+</script>
+<table style="BACKGROUND-COLOR: rgb(242,242,243)" border="0" width="100%" onload="alert('ggg')">
+  <tr style="HEIGHT: 80px">
+    <td><a href="{ImageLink1}" id="HeaderImageLink1"><img style="BORDER-RIGHT-WIDTH: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px" alt="{ImageLink1}" src="{hdLogoPath}" width="175" height="100"></a> </td> 
+    <td width="54%" colspan="4" align="center"><input type="hidden" id="HeaderhdLogoPath" value="{hdLogoPath}" name="{hdLogoPath_Name}">
+      <h1>Registro de Resultados de Medición de los CDS </h1>
+ </td> 
+    <td style="VERTICAL-ALIGN: top; ALIGN: rigth">
+      <!-- BEGIN Panel pnlMenu -->
+      <table style="BACKGROUND-COLOR: rgb(242,242,243); COLOR: rgb(0,122,173); FONT-WEIGHT: bold">
+        <tr style="HEIGHT: 60px">
+          <td>
+            <div style="BACKGROUND-COLOR: rgb(242,242,243); WIDTH: 300px; HEIGHT: 40px; COLOR: #ffffff; FONT-SIZE: 12px; VERTICAL-ALIGN: top; ALIGN: RIGTH">
+            </div>
+ </td> 
+          <td width="40%">
+            <div id="clock">
+            </div>
+ </td> 
+        </tr>
+ </td> 
+    </tr>
+ 
+  </table>
+ <!-- END Panel pnlMenu --><br>
+</td>
+</tr>
+ 
+<tr style="HEIGHT: 25px">
+  <td colspan="2">
+    <!-- BEGIN Panel Panel2 -->
+    <table width="250">
+      <tr>
+        <td></td> 
+      </tr>
+ 
+    </table>
+ <!-- END Panel Panel2 --></td> 
+  <td width="170" align="left"></td> 
+  <td>
+    <!-- BEGIN Panel Panel4 -->
+    <table width="150">
+      <tr>
+        <td style="BACKGROUND-COLOR: rgb(222,222,213); WIDTH: 100%; COLOR: rgb(0,122,173); FONT-SIZE: 12px; FONT-WEIGHT: bold; ALIGN: RIGTH">
+          <div style="BACKGROUND-COLOR: rgb(242,242,243); WIDTH: 100%; HEIGHT: 24px; COLOR: #444444; MARGIN-LEFT: 7px">
+            <img style="MARGIN-TOP: 5px" alt="Carga de Archivos" src="{imgCargaxlsPath}" width="20" height="20"></img><a href="carga_archivo.php" id="HeaderPanel1LinkCA">Realizar nueva carga</a> 
+          </div>
+ </td> 
+      </tr>
+ 
+    </table>
+ <!-- END Panel Panel4 --></td> 
+  <td>
+    <!-- BEGIN Panel Panel3 -->
+    <table width="150">
+      <tr>
+        <td style="BACKGROUND-COLOR: rgb(222,222,213); WIDTH: 90%; COLOR: rgb(0,122,173); FONT-SIZE: 12px; FONT-WEIGHT: bold">
+          <div style="BACKGROUND-COLOR: rgb(242,242,243); HEIGHT: 24px; COLOR: #444444; MARGIN-LEFT: 7px">
+            <img style="MARGIN-TOP: 5px" alt="Carga de Periodos" src="{imgPeriodosPath}" width="20" height="20"></img><a href="periodo4.php" id="HeaderPanel1LinkPC">Periodos de Carga </a> 
+          </div>
+ </td> 
+      </tr>
+ 
+    </table>
+ <!-- END Panel Panel3 --></td> 
+  <td>
+    <!-- BEGIN Panel Panel1 -->
+    <table style="PADDING-BOTTOM: 0px; BORDER-RIGHT-WIDTH: 1px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-LEFT-WIDTH: 1px; PADDING-TOP: 0px" width="557">
+      <tr style="HEIGHT: 24px">
+        <td style="BACKGROUND-COLOR: rgb(222,222,213); WIDTH: 20%; COLOR: rgb(0,122,173); FONT-SIZE: 12px; FONT-WEIGHT: bold">
+          <div style="BACKGROUND-COLOR: rgb(242,242,243); HEIGHT: 24px; COLOR: #444444; MARGIN-LEFT: 7px">
+            <img style="MARGIN-TOP: 5px" alt="Histórico de cargas" src="{imgHistoricosPath}" width="20" height="20"></img><a href="historico_cargas_rs2.php" id="HeaderPanel1LinkHC">Histórico de Cargas</a> 
+          </div>
+ </td> 
+        <td style="BACKGROUND-COLOR: rgb(222,222,213); WIDTH: 20%; COLOR: rgb(0,122,173); FONT-SIZE: 12px; FONT-WEIGHT: bold">
+          <div style="BACKGROUND-COLOR: rgb(242,242,243); HEIGHT: 24px; COLOR: #444444; MARGIN-LEFT: 7px">
+            <img style="MARGIN-TOP: 5px" src="{imgUserPath}"></img>&nbsp;&nbsp;Usuario:&nbsp;{lSesion} 
+          </div>
+ </td> 
+        <td style="BACKGROUND-COLOR: rgb(222,222,213); WIDTH: 35%; COLOR: rgb(0,122,173); FONT-SIZE: 12px; FONT-WEIGHT: bold">
+          <div style="BACKGROUND-COLOR: rgb(242,242,243); HEIGHT: 24px; MARGIN-LEFT: 0px">
+            &nbsp;<img style="MARGIN-TOP: 5px" id="HeaderImage1" alt="Cerrar Sesión" src="{imgCierrePath}">&nbsp; <a href="{Link1_Src}" id="HeaderPanel1Link1">Cerrar Sesión</a> <img style="MARGIN-TOP: 0px; MARGIN-RIGHT: -2px" src="{imgCierre2Path}">
+          </div>
+ </td> 
+      </tr>
+ 
+    </table>
+ <!-- END Panel Panel1 --></td>
+</tr>
+</table>

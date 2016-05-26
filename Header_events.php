@@ -33,15 +33,18 @@ function Header_BeforeShow(& $sender)
 
 //Custom Code @9-2A29BDB7
 // -------------------------
-	global $PathToRoot;
+	global $Panel2;
 	global $Panel1;
 	global $Tpl;
+	$PathToRoot='';
 	$Tpl->SetVar("imgUserPath",$PathToRoot  . "images/user.png");
 	$Tpl->SetVar("imgCierrePath",$PathToRoot  . "images/cierre.png");
 	$Tpl->SetVar("imgCierre2Path",$PathToRoot  . "images/cierre2.png");
 	$Tpl->SetVar("imgCargaxlsPath",$PathToRoot  . "images/xls.jpg");
 	$Tpl->SetVar("imgHistoricosPath",$PathToRoot  . "images/historico.jpg");
 	$Tpl->SetVar("imgPeriodosPath",$PathToRoot  . "images/calendario.jpg");
+	$Tpl->SetVar("imgBackTableroPath",$PathToRoot  . "images/prev.gif");
+	
     $Component->hdLogoPath->SetValue($PathToRoot . "SDMA_capcV.png");
     
     if(CCGetUserLogin()==""){
@@ -55,7 +58,7 @@ function Header_BeforeShow(& $sender)
     
     	//$Component->pnlMenu->Visible=true;//false;
     	$Component->Panel2->Visible=true;
-   
+    						   
     if(CCGetGroupID()<5){
     	$Component->pnlMenu->Visible=false;
     }

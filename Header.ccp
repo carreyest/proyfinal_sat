@@ -1,7 +1,7 @@
 <Page id="1" templateExtension="html" relativePath="." fullRelativePath="." secured="False" urlType="Relative" isIncluded="True" SSLAccess="False" isService="False" cachingEnabled="False" cachingDuration="1 minutes" wizardTheme="{CCS_Style}" wizardThemeVersion="3.0" needGeneration="0" pasteActions="pasteActions" PathID="Header">
 	<Components>
 		<ImageLink id="11" visible="Yes" fieldSourceType="DBColumn" dataType="Text" hrefType="Page" urlType="Relative" preserveParameters="GET" name="ImageLink1" PathID="HeaderImageLink1" linkProperties="{&quot;textSource&quot;:&quot;x&quot;,&quot;textSourceDB&quot;:&quot;&quot;,&quot;hrefSource&quot;:&quot;&quot;,&quot;hrefSourceDB&quot;:&quot;&quot;,&quot;title&quot;:&quot;&quot;,&quot;target&quot;:&quot;&quot;,&quot;name&quot;:&quot;&quot;,&quot;linkParameters&quot;:{&quot;length&quot;:0,&quot;objectType&quot;:&quot;linkParameters&quot;}}">
-<Components/>
+			<Components/>
 			<Events/>
 			<LinkParameters/>
 			<Attributes/>
@@ -60,7 +60,14 @@
 		&lt;a href=&quot;{Link5_Src}&quot; id=&quot;HeaderMyMLink5&quot;&gt;Métricas y Mediciones&lt;/a&gt; 
     &lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" PathID="HeaderPanel2">
 			<Components>
-			</Components>
+				<Link id="28" visible="Yes" fieldSourceType="DBColumn" dataType="Text" html="False" hrefType="Page" urlType="Relative" preserveParameters="GET" name="BackTablero1" PathID="HeaderPanel2BackTablero1" wizardUseTemplateBlock="False" linkProperties="{&quot;textSource&quot;:&quot;Regresar al  Tablero &quot;,&quot;textSourceDB&quot;:&quot;&quot;,&quot;hrefSource&quot;:&quot;/mymsdma4/TableroSLAs.php&quot;,&quot;hrefSourceDB&quot;:&quot;&quot;,&quot;title&quot;:&quot;&quot;,&quot;target&quot;:&quot;&quot;,&quot;name&quot;:&quot;&quot;,&quot;linkParameters&quot;:{&quot;length&quot;:0,&quot;objectType&quot;:&quot;linkParameters&quot;}}" hrefSource="/mymsdma4/TableroSLAs.php">
+					<Components/>
+					<Events/>
+					<LinkParameters/>
+					<Attributes/>
+					<Features/>
+				</Link>
+</Components>
 			<Events/>
 			<Attributes/>
 			<Features/>
@@ -90,7 +97,6 @@
 		<Event name="BeforeShow" type="Server">
 			<Actions>
 				<Action actionName="Custom Code" actionCategory="General" id="9"/>
-
 			</Actions>
 		</Event>
 	</Events>

@@ -65,7 +65,7 @@ class clsHeader { //Header class @1-CC982CB1
     }
 //End Operations Method
 
-//Initialize Method @1-A1BE499D
+//Initialize Method @1-A1670252
     function Initialize($Path = "")
     {
         global $FileName;
@@ -94,10 +94,14 @@ class clsHeader { //Header class @1-CC982CB1
         $this->Link1->Parameters = CCGetQueryString("QueryString", array("ccsForm"));
         $this->Link1->Page = $this->RelativePath . "Logout.php";
         $this->Panel2 = new clsPanel("Panel2", $this);
+        $this->BackTablero1 = new clsControl(ccsLink, "BackTablero1", "BackTablero1", ccsText, "", CCGetRequestParam("BackTablero1", ccsGet, NULL), $this);
+        $this->BackTablero1->Parameters = CCGetQueryString("QueryString", array("ccsForm"));
+        $this->BackTablero1->Page = "/mymsdma4/TableroSLAs.php";
         $this->Panel3 = new clsPanel("Panel3", $this);
         $this->Panel4 = new clsPanel("Panel4", $this);
         $this->Panel1->AddComponent("lSesion", $this->lSesion);
         $this->Panel1->AddComponent("Link1", $this->Link1);
+        $this->Panel2->AddComponent("BackTablero1", $this->BackTablero1);
         $this->Panel3->Visible = false;
         $this->Panel4->Visible = false;
         $this->BindEvents();

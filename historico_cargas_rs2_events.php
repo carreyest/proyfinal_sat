@@ -761,7 +761,7 @@ function Grid1_BeforeShowRow(& $sender)
 					$total_div=($result/$result2)*100;
 					$Grid1->$sAcronimo->SetValue($Grid1->$sCumplen->GetValue() . "/" . $Grid1->$sTotal->GetValue() . " = " . round($total_div,2) . "%");
 					if($Grid1->DataSource->f($db->f(0))<$Grid1->DataSource->f($sMeta)){
-						$Grid1->$sImg->SetValue("images/down.png");
+						$Grid1->$sImg->SetValue("images/down.png");						
 					} else {
 						$Grid1->$sImg->SetValue("images/up.png");
 					}

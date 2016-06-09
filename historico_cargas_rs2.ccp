@@ -1732,86 +1732,98 @@ and   fecha_visible&lt;=getDATE()
 		<Grid id="2" secured="False" sourceType="SQL" returnValueType="Number" defaultPageSize="15" name="Grid1" connection="con_xls" dataSource="select  sc.descripcion,
 	 sum(case when herr_est_cost='1' or herr_est_cost='0' then 1 else 0 end) totherr_est_cost, 
 		sum(case when isnumeric(herr_est_cost)=1 then cast(herr_est_cost as int) else 0 end) cumplenherr_est_cost, 
-		case when count(herr_est_cost)&gt;0 then 
-			sum(case when isnumeric(herr_est_cost)=1 then cast(herr_est_cost as int) else 0 end)/cast(count(herr_est_cost) as float)*100 
-		else 0 end herr_est_cost,
-	 (select meta from mc_c_metrica where acronimo='herr_est_cost') as meta_herr_est_cost,
+		case when sum(case when herr_est_cost='1' or herr_est_cost='0' then 1 else 0 end)&gt;0 then 
+			sum(case when isnumeric(herr_est_cost)=1 then cast(herr_est_cost as int) else 0 end)/cast((sum(case when herr_est_cost='1' or herr_est_cost='0' then 1 else 0 end)) as float)*100 
+		else 0 end herr_est_cost,	 
+	 (select meta from [archivosxls].[dbo].mc_c_metrica where acronimo='herr_est_cost') as meta_herr_est_cost,
+	 
 	 sum(case when req_serv='1' or req_serv='0' then 1 else 0 end) totreq_serv, 
 		sum(case when isnumeric(req_serv)=1 then cast(req_serv as int) else 0 end) cumplenreq_serv, 
-		case when count(req_serv)&gt;0 then 
-			sum(case when isnumeric(req_serv)=1 then cast(req_serv as int) else 0 end)/cast(count(req_serv) as float)*100 
-		else 0 end req_serv,
-	 (select meta from mc_c_metrica where acronimo='req_serv') as meta_req_serv,
+		case when sum(case when req_serv='1' or req_serv='0' then 1 else 0 end)&gt;0 then 
+			sum(case when isnumeric(req_serv)=1 then cast(req_serv as int) else 0 end)/cast((sum(case when req_serv='1' or req_serv='0' then 1 else 0 end)) as float)*100 
+		else 0 end req_serv,	 
+	 (select meta from [archivosxls].[dbo].mc_c_metrica where acronimo='req_serv') as meta_req_serv,
+	 
 	 sum(case when cumpl_req_func='1' or cumpl_req_func='0' then 1 else 0 end) totcumpl_req_func, 
 		sum(case when isnumeric(cumpl_req_func)=1 then cast(cumpl_req_func as int) else 0 end) cumplencumpl_req_func, 
-		case when count(cumpl_req_func)&gt;0 then 
-			sum(case when isnumeric(cumpl_req_func)=1 then cast(cumpl_req_func as int) else 0 end)/cast(count(cumpl_req_func) as float)*100 
+		case when sum(case when cumpl_req_func='1' or cumpl_req_func='0' then 1 else 0 end)&gt;0 then 
+			sum(case when isnumeric(cumpl_req_func)=1 then cast(cumpl_req_func as int) else 0 end)/cast((sum(case when cumpl_req_func='1' or cumpl_req_func='0' then 1 else 0 end)) as float)*100 
 		else 0 end cumpl_req_func ,
-	 (select meta from mc_c_metrica where acronimo='cumpl_req_func') as meta_cumpl_req_func,
+	 (select meta from [archivosxls].[dbo].mc_c_metrica where acronimo='cumpl_req_func') as meta_cumpl_req_func,
+	 
+	 
 	 sum(case when calidad_prod_term='1' or calidad_prod_term='0' then 1 else 0 end) totcalidad_prod_term, 
 		sum(case when isnumeric(calidad_prod_term)=1 then cast(calidad_prod_term as int) else 0 end) cumplencalidad_prod_term, 
-		case when count(calidad_prod_term)&gt;0 then 
-			sum(case when isnumeric(calidad_prod_term)=1 then cast(calidad_prod_term as int) else 0 end)/cast(count(calidad_prod_term) as float)*100 
+		case when sum(case when calidad_prod_term='1' or calidad_prod_term='0' then 1 else 0 end)&gt;0 then 
+			sum(case when isnumeric(calidad_prod_term)=1 then cast(calidad_prod_term as int) else 0 end)/
+		 cast(	(sum(case when calidad_prod_term='1' or calidad_prod_term='0' then 1 else 0 end))AS float)*100 
 		else 0 end calidad_prod_term,
-	 (select meta from mc_c_metrica where acronimo='calidad_prod_term') as meta_calidad_prod_term,
+	 (select meta from [archivosxls].[dbo].mc_c_metrica where acronimo='calidad_prod_term') as meta_calidad_prod_term,
+	
+	
 	 sum(case when retr_entregable='1' or retr_entregable='0' then 1 else 0 end) totretr_entregable, 
 		sum(case when isnumeric(retr_entregable)=1 then cast(retr_entregable as int) else 0 end) cumplenretr_entregable, 
-		case when count(retr_entregable)&gt;0 then 
-			sum(case when isnumeric(retr_entregable)=1 then cast(retr_entregable as int) else 0 end)/cast(count(retr_entregable) as float)*100 
-		else 0 end retr_entregable,
-	 (select meta from mc_c_metrica where acronimo='retr_entregable') as meta_retr_entregable,
+		case when sum(case when retr_entregable='1' or retr_entregable='0' then 1 else 0 end)&gt;0 then 
+			sum(case when isnumeric(retr_entregable)=1 then cast(retr_entregable as int) else 0 end)/cast((sum(case when retr_entregable='1' or retr_entregable='0' then 1 else 0 end)) as float)*100 
+		else 0 end retr_entregable,	 
+	 (select meta from [archivosxls].[dbo].mc_c_metrica where acronimo='retr_entregable') as meta_retr_entregable,
+	 
 	 sum(case when calidad_codigo='1' or calidad_codigo='0' then 1 else 0 end) totcal_cod, 
 		sum(case when isnumeric(calidad_codigo)=1 then cast(calidad_codigo  as int) else 0 end) cumplencal_cod, 
-		case when count(calidad_codigo)&gt;0 then 
-			sum(case when isnumeric(calidad_codigo)=1 then cast(calidad_codigo  as int) else 0 end)/cast(count(calidad_codigo) as float)*100 
-		else 0 end cal_cod,
-	 (select meta from mc_c_metrica where acronimo='cal_cod') as meta_cal_cod,
+		case when sum(case when calidad_codigo='1' or calidad_codigo='0' then 1 else 0 end)&gt;0 then 
+			sum(case when isnumeric(calidad_codigo)=1 then cast(calidad_codigo  as int) else 0 end)/cast((sum(case when calidad_codigo='1' or calidad_codigo='0' then 1 else 0 end)) as float)*100 
+		else 0 end cal_cod,	 
+	 (select meta from [archivosxls].[dbo].mc_c_metrica where acronimo='cal_cod') as meta_cal_cod,
+	 
 	 sum(case when def_fug_amb_prod='1' or def_fug_amb_prod='0' then 1 else 0 end) totdef_fug_amb_prod, 
 		sum(case when isnumeric(def_fug_amb_prod)=1 then cast(def_fug_amb_prod as int) else 0 end) cumplendef_fug_amb_prod, 
-		case when count(def_fug_amb_prod)&gt;0 then 
-			sum(case when isnumeric(def_fug_amb_prod)=1 then cast(def_fug_amb_prod as int) else 0 end)/cast(count(def_fug_amb_prod) as float)*100  
-		else 0 end def_fug_amb_prod,
-	 (select meta from mc_c_metrica where acronimo='def_fug_amb_prod') as meta_def_fug_amb_prod,
-count(cumple_inc_tiempoasignacion) totinc_tiempoasignacion, 
+		case when sum(case when def_fug_amb_prod='1' or def_fug_amb_prod='0' then 1 else 0 end)&gt;0 then 
+			sum(case when isnumeric(def_fug_amb_prod)=1 then cast(def_fug_amb_prod as int) else 0 end)/cast((sum(case when def_fug_amb_prod='1' or def_fug_amb_prod='0' then 1 else 0 end)) as float)*100  
+		else 0 end def_fug_amb_prod,	 
+	 (select meta from [archivosxls].[dbo].mc_c_metrica where acronimo='def_fug_amb_prod') as meta_def_fug_amb_prod,
+	 
+	 sum(case when cumple_inc_tiempoasignacion='1' or cumple_inc_tiempoasignacion='0' then 1 else 0 end)  totinc_tiempoasignacion, 
 		sum(case when isnumeric(cumple_inc_tiempoasignacion)=1 then cast(cumple_inc_tiempoasignacion as int) else 0 end) cumpleninc_tiempoasignacion, 
-		case when count(cumple_inc_tiempoasignacion)&gt;0 then 
-			sum(case when isnumeric(cumple_inc_tiempoasignacion)=1 then cast(cumple_inc_tiempoasignacion as int) else 0 end)/cast(count(cumple_inc_tiempoasignacion) as float)*100 
+		case when sum(case when cumple_inc_tiempoasignacion='1' or cumple_inc_tiempoasignacion='0' then 1 else 0 end)&gt;0 then 
+			sum(case when isnumeric(cumple_inc_tiempoasignacion)=1 then cast(cumple_inc_tiempoasignacion as int) else 0 end)/cast((sum(case when cumple_inc_tiempoasignacion='1' or cumple_inc_tiempoasignacion='0' then 1 else 0 end)) as float)*100 
 		else 0 end inc_tiempoasignacion,
-	 (select meta from mc_c_metrica where acronimo='inc_tiempoasignacion') as meta_inc_tiempoasignacion,
-	 count(cumple_inc_tiemposolucion) totinc_tiemposolucion, 
+	 (select meta from [archivosxls].[dbo].mc_c_metrica where acronimo='inc_tiempoasignacion') as meta_inc_tiempoasignacion,
+	
+	 sum(case when cumple_inc_tiemposolucion='1' or cumple_inc_tiemposolucion='0' then 1 else 0 end) totinc_tiemposolucion, 
 		sum(case when isnumeric(cumple_inc_tiempoSolucion)=1 then cast(cumple_inc_tiempoSolucion as int) else 0 end) cumpleninc_tiemposolucion, 
-		case when count(cumple_inc_tiemposolucion)&gt;0 then 
-			sum(case when isnumeric(cumple_inc_tiempoSolucion)=1 then cast(cumple_inc_tiempoSolucion as int) else 0 end)/cast(count(cumple_inc_tiemposolucion) as float)*100 
-		else 0 end inc_tiemposolucion,
-	 (select meta from mc_c_metrica where acronimo='inc_tiemposolucion') as meta_inc_tiemposolucion,
-	 	 AVG(Cumple_EF) cumplen_efic_presup, AVG(total_ef) tot_efic_presup, avg(cast(Cumple_EF as float))/avg(total_ef)*100  efic_presup,
-	 (Select Meta from mc_c_metrica where acronimo='EFIC_PRESUP') as meta_efic_presup
-from mc_c_ServContractual sc 
-left join (select * from l_calificacion_rs_aut m
-	where m.id_periodo={s_id_periodo}   and m.id_proveedor = {s_id_proveedor} and m.tipo_nivel_servicio ='{s_opt_slas}' and m.estatus ='F' and m.id_ppmc&gt;0
+		case when sum(case when cumple_inc_tiemposolucion='1' or cumple_inc_tiemposolucion='0' then 1 else 0 end)&gt;0 then 
+			sum(case when isnumeric(cumple_inc_tiempoSolucion)=1 then cast(cumple_inc_tiempoSolucion as int) else 0 end)/cast((sum(case when cumple_inc_tiemposolucion='1' or cumple_inc_tiemposolucion='0' then 1 else 0 end)) as float)*100 
+		else 0 end inc_tiemposolucion,	 
+	 (select meta from [archivosxls].[dbo].mc_c_metrica where acronimo='inc_tiemposolucion') as meta_inc_tiemposolucion,
+	 	
+	 	 AVG(Cumple_EF) cumplenefic_presup, AVG(total_ef) totefic_presup, avg(cast(Cumple_EF as float))/avg(total_ef)*100  efic_presup,
+	 (Select Meta from [archivosxls].[dbo].mc_c_metrica where acronimo='EFIC_PRESUP') as meta_efic_presup
+from [archivosxls].[dbo].mc_c_ServContractual sc 
+left join (select * from [archivosxls].[dbo].l_calificacion_rs_aut m
+	where m.id_periodo= {s_id_periodo}    and m.id_proveedor ={s_id_proveedor} and m.tipo_nivel_servicio ='{s_opt_slas}' and m.estatus ='F' 
 	and num_carga=(
        select max(b.num_carga)
-       from l_calificacion_rs_aut  b
-       where b.id_proveedor = {s_id_proveedor}
-       and b.id_periodo = {s_id_periodo}
-       and b.tipo_nivel_servicio = '{s_opt_slas}'
+       from [archivosxls].[dbo].l_calificacion_rs_aut  b
+       where b.id_proveedor = {s_id_proveedor} 
+       and b.id_periodo =  {s_id_periodo} 
+       and b.tipo_nivel_servicio = '{s_opt_slas}' 
        and b.estatus='F'
        )) m on sc.Descripcion  = m.servicio_cont  
 	 left join	(select cumple_inc_tiempoasignacion, cumple_inc_tiempoSolucion, 
 				id_proveedor, 'Servicio de Soporte de Aplicaciones'  servicio_cont
-				from l_calificacion_incidentes_AUT
-				where (id_periodo={s_id_periodo}  and id_proveedor = {s_id_proveedor} and tipo_nivel_servicio ='{s_opt_slas}'  and estatus ='F' and id_incidencia&lt;&gt;'INC000000000000'
-				and num_carga=(select max(b.num_carga) from l_calificacion_incidentes_aut b 
-				where b.id_proveedor = {s_id_proveedor} and b.id_periodo =  {s_id_periodo} and b.tipo_nivel_servicio = '{s_opt_slas}' and b.estatus='F' ) 
+				from [archivosxls].[dbo].l_calificacion_incidentes_AUT
+				where (id_periodo= {s_id_periodo}   and id_proveedor = {s_id_proveedor}  and tipo_nivel_servicio ='{s_opt_slas}'   and estatus ='F'
+				and num_carga=(select max(b.num_carga) from [archivosxls].[dbo].l_calificacion_incidentes_aut b 
+				where b.id_proveedor = {s_id_proveedor}  and b.id_periodo =   {s_id_periodo}  and b.tipo_nivel_servicio = '{s_opt_slas}'  and b.estatus='F' ) 
 				) )  mi on  mi.servicio_cont = sc.Descripcion 
-	left join (select SUM(case when efic_presupuestal='1' or efic_presupuestal='0' then 1 else 0 end) Cumple_EF, COUNT(efic_presupuestal) Total_EF, Id_Proveedor,  2 IdServicioCont  
-			from l_detalle_eficiencia_presupuestal 
-			where (id_periodo= {s_id_periodo}  and id_proveedor = {s_id_proveedor} and tipo_nivel_servicio ='{s_opt_slas}'  and estatus ='F'
-				and num_carga=(select max(b.num_carga) from l_calificacion_incidentes_aut b 
-				where b.id_proveedor = {s_id_proveedor} and b.id_periodo = {s_id_periodo} and b.tipo_nivel_servicio = '{s_opt_slas}' and b.estatus='F' ) 
+	left join (select SUM(case when efic_presupuestal='1' then 1 else 0 end) Cumple_EF, COUNT(efic_presupuestal) Total_EF, Id_Proveedor,  2 IdServicioCont  
+			from [archivosxls].[dbo].l_detalle_eficiencia_presupuestal 
+			where (id_periodo=  {s_id_periodo}   and id_proveedor = {s_id_proveedor}  and tipo_nivel_servicio ='{s_opt_slas}'   and estatus ='F'
+				and num_carga=(select max(b.num_carga) from [archivosxls].[dbo].l_calificacion_incidentes_aut b 
+				where b.id_proveedor = {s_id_proveedor}  and b.id_periodo = {s_id_periodo}  and b.tipo_nivel_servicio = '{s_opt_slas}'  and b.estatus='F' ) 
 				) group by id_proveedor ) ef on ef.IdServicioCont = sc.id
 where sc.Aplica ='CDS' and IdOld &lt;&gt;0
-group by sc.Descripcion " pageSizeLimit="100" pageSize="True" wizardCaption="Resumen de Niveles de Servicio" wizardThemeApplyTo="Page" wizardGridType="Tabular" wizardSortingType="Simple" wizardAllowInsert="False" wizardAltRecord="False" wizardAltRecordType="Style" wizardRecordSeparator="False" wizardNoRecords="No hay registros" wizardGridPagingType="Simple" wizardUseSearch="False" wizardAddNbsp="True" gridTotalRecords="False" wizardAddPanels="False" wizardType="Grid" wizardUseInterVariables="False" addTemplatePanel="False" changedCaptionGrid="True" gridExtendedHTML="False" PathID="Grid1">
+group by sc.Descripcion" pageSizeLimit="100" pageSize="True" wizardCaption="Resumen de Niveles de Servicio" wizardThemeApplyTo="Page" wizardGridType="Tabular" wizardSortingType="Simple" wizardAllowInsert="False" wizardAltRecord="False" wizardAltRecordType="Style" wizardRecordSeparator="False" wizardNoRecords="No hay registros" wizardGridPagingType="Simple" wizardUseSearch="False" wizardAddNbsp="True" gridTotalRecords="False" wizardAddPanels="False" wizardType="Grid" wizardUseInterVariables="False" addTemplatePanel="False" changedCaptionGrid="True" gridExtendedHTML="False" PathID="Grid1">
 			<Components>
 				<Label id="32" fieldSourceType="DBColumn" dataType="Text" html="False" generateSpan="False" name="descripcion" fieldSource="descripcion" wizardCaption="Descripcion" wizardIsPassword="False" wizardUseTemplateBlock="False" wizardAddNbsp="True" PathID="Grid1descripcion">
 					<Components/>
@@ -2101,13 +2113,13 @@ group by sc.Descripcion " pageSizeLimit="100" pageSize="True" wizardCaption="Res
 					<Attributes/>
 					<Features/>
 				</Image>
-				<Label id="81" fieldSourceType="DBColumn" dataType="Integer" html="False" generateSpan="False" name="cumplenefic_presup" PathID="Grid1cumplenefic_presup" fieldSource="cumplen_efic_presup">
+				<Label id="81" fieldSourceType="DBColumn" dataType="Integer" html="False" generateSpan="False" name="cumplenefic_presup" PathID="Grid1cumplenefic_presup" fieldSource="cumplenefic_presup">
 					<Components/>
 					<Events/>
 					<Attributes/>
 					<Features/>
 				</Label>
-				<Label id="82" fieldSourceType="DBColumn" dataType="Integer" html="False" generateSpan="False" name="totefic_presup" PathID="Grid1totefic_presup" fieldSource="tot_efic_presup">
+				<Label id="82" fieldSourceType="DBColumn" dataType="Integer" html="False" generateSpan="False" name="totefic_presup" PathID="Grid1totefic_presup" fieldSource="totefic_presup">
 					<Components/>
 					<Events/>
 					<Attributes/>
@@ -2141,9 +2153,9 @@ group by sc.Descripcion " pageSizeLimit="100" pageSize="True" wizardCaption="Res
 			<SPParameters/>
 			<SQLParameters>
 				<SQLParameter id="539" dataType="Integer" defaultValue="CCGetSession(&quot;id_proveedor&quot;)" designDefaultValue="0" parameterSource="s_id_proveedor" parameterType="URL" variable="s_id_proveedor"/>
-<SQLParameter id="540" dataType="Integer" defaultValue="0" designDefaultValue="0" parameterSource="s_id_periodo" parameterType="URL" variable="s_id_periodo"/>
-<SQLParameter id="541" dataType="Text" parameterSource="s_opt_slas" parameterType="URL" variable="s_opt_slas"/>
-</SQLParameters>
+				<SQLParameter id="540" dataType="Integer" defaultValue="0" designDefaultValue="0" parameterSource="s_id_periodo" parameterType="URL" variable="s_id_periodo"/>
+				<SQLParameter id="541" dataType="Text" parameterSource="s_opt_slas" parameterType="URL" variable="s_opt_slas"/>
+			</SQLParameters>
 			<SecurityGroups/>
 			<Attributes/>
 			<Features/>

@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML>
 <html>
 <head>
 <meta http-equiv="content-type" content="text/html; charset=windows-1252">
@@ -8,23 +8,32 @@
 <link rel="stylesheet" type="text/css" href="Styles/{CCS_Style}/Style_Components_doctype.css" />
 <script language="JavaScript" type="text/javascript">
 //Begin CCS script
-//Include Common JSFunctions @1-D3B5F5BF
+//Include Common JSFunctions @1-2504AB44
 </script>
-<script language="JavaScript" src="ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
-<script language="JavaScript" type="text/javascript">
+<script src="ClientI18N.php?file=Globalize.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
 //End Include Common JSFunctions
-
-//DEL  </script>
-//DEL 
+</script>
 <link rel="stylesheet" type="text/css" href="Styles/{CCS_Style}/ccs-jquery-ui-calendar.css" />
-//DEL {page:scriptIncludes} //DEL 
 <script type="text/javascript">
 
-//Imprimir_OnClick @537-A54AE8D9
-function Imprimir_OnClick()
-{
-    var result = true;
-//End Imprimir_OnClick
+//Include User Scripts @1-A87AC9EE
+</script>
+{page:scriptIncludes}
+<script type="text/javascript">
+//End Include User Scripts
+
+//Common Script Start @1-8BFA436B
+jQuery(function ($) {
+    var features = { };
+    var actions = { };
+    var params = { };
+//End Common Script Start
+
+//ImprimirOnClick Event Start @-EAE0DE14
+    actions["ImprimirOnClick"] = function (eventType, parameters) {
+        var result = true;
+//End ImprimirOnClick Event Start
 
 //Custom Code @538-2A29BDB7
         // -------------------------
@@ -34,19 +43,26 @@ function Imprimir_OnClick()
         // -------------------------
 //End Custom Code
 
-//Close Imprimir_OnClick @537-BC33A33A
-    return result;
-}
-//End Close Imprimir_OnClick
+//ImprimirOnClick Event End @-A5B9ECB8
+        return result;
+    };
+//End ImprimirOnClick Event End
 
-//bind_events @1-7332B272
-function bind_events() {
-    try { Header_bind_events(); } catch(e) {}
-    addEventHandler("Imprimir", "click", Imprimir_OnClick);
-}
-//End bind_events
+//Event Binding @1-CEB2F32A
+    $('*:ccsControl(Imprimir)').ccsBind(function() {
+        this.bind("click", actions["ImprimirOnClick"]);
+    });
+//End Event Binding
 
-window.onload = bind_events; //Assign bind_events @1-19F7B649
+//Plugin Calls @1-403A4754
+    $('*:ccsControl(Imprimir)').ccsBind(function() {
+        this.bind("click", function(){ $("body").data("disableValidation", true); });
+    });
+//End Plugin Calls
+
+//Common Script End @1-562554DE
+});
+//End Common Script End
 //End CCS script
 </script>
 <script type="text/javascript">

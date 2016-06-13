@@ -155,10 +155,10 @@ class clsGridl_detalle_medicion_apertu { //l_detalle_medicion_apertu class @99-0
     }
 //End Initialize Method
 
-//Show Method @99-DDBF819C
+//Show Method @99-7EBC43C9
     function Show()
     {
-        $Tpl = & CCGetTemplate($this);
+        $Tpl = CCGetTemplate($this);
         global $CCSLocales;
         if(!$this->Visible) return;
 
@@ -687,10 +687,10 @@ class clsGridl_detalle_medicion_cierre { //l_detalle_medicion_cierre class @160-
     }
 //End Initialize Method
 
-//Show Method @160-02DD11A7
+//Show Method @160-EB1E39C9
     function Show()
     {
-        $Tpl = & CCGetTemplate($this);
+        $Tpl = CCGetTemplate($this);
         global $CCSLocales;
         if(!$this->Visible) return;
 
@@ -1244,10 +1244,10 @@ class clsGridl_detalle_medicion_inc { //l_detalle_medicion_inc class @221-736D45
     }
 //End Initialize Method
 
-//Show Method @221-78CC5FFB
+//Show Method @221-9350B537
     function Show()
     {
-        $Tpl = & CCGetTemplate($this);
+        $Tpl = CCGetTemplate($this);
         global $CCSLocales;
         if(!$this->Visible) return;
 
@@ -1697,10 +1697,10 @@ class clsGridl_detalle_eficiencia_pres { //l_detalle_eficiencia_pres class @264-
     }
 //End Initialize Method
 
-//Show Method @264-0D1F5E3F
+//Show Method @264-97E49AA7
     function Show()
     {
-        $Tpl = & CCGetTemplate($this);
+        $Tpl = CCGetTemplate($this);
         global $CCSLocales;
         if(!$this->Visible) return;
 
@@ -2094,10 +2094,10 @@ class clsGridl_calificacion_rs_AUT { //l_calificacion_rs_AUT class @308-20A87DEF
     }
 //End Initialize Method
 
-//Show Method @308-2688CB29
+//Show Method @308-902B3677
     function Show()
     {
-        $Tpl = & CCGetTemplate($this);
+        $Tpl = CCGetTemplate($this);
         global $CCSLocales;
         if(!$this->Visible) return;
 
@@ -2620,11 +2620,11 @@ class clsRecordl_calificacion_incidentes1 { //l_calificacion_incidentes1 Class @
     }
 //End Operation Method
 
-//Show Method @352-E9F7D5F1
+//Show Method @352-6ACB8C14
     function Show()
     {
         global $CCSUseAmp;
-        $Tpl = & CCGetTemplate($this);
+        $Tpl = CCGetTemplate($this);
         global $FileName;
         global $CCSLocales;
         $Error = "";
@@ -2791,10 +2791,10 @@ class clsGridl_calificacion_incidentes { //l_calificacion_incidentes class @382-
     }
 //End Initialize Method
 
-//Show Method @382-B096753C
+//Show Method @382-E265569C
     function Show()
     {
-        $Tpl = & CCGetTemplate($this);
+        $Tpl = CCGetTemplate($this);
         global $CCSLocales;
         if(!$this->Visible) return;
 
@@ -3145,10 +3145,10 @@ class clsGridresumen { //resumen class @440-C13F06D0
     }
 //End Initialize Method
 
-//Show Method @440-1E6252C0
+//Show Method @440-5DD4A007
     function Show()
     {
-        $Tpl = & CCGetTemplate($this);
+        $Tpl = CCGetTemplate($this);
         global $CCSLocales;
         if(!$this->Visible) return;
 
@@ -3471,10 +3471,10 @@ class clsGridGrid1 { //Grid1 class @2-E857A572
     }
 //End Initialize Method
 
-//Show Method @2-E947D208
+//Show Method @2-A2716E91
     function Show()
     {
-        $Tpl = & CCGetTemplate($this);
+        $Tpl = CCGetTemplate($this);
         global $CCSLocales;
         if(!$this->Visible) return;
 
@@ -4174,7 +4174,7 @@ class clsGrid1DataSource extends clsDBcon_xls {  //Grid1DataSource Class @2-4A4C
 
 } //End Grid1DataSource Class @2-FCB6E20C
 
-//Initialize Page @1-681D7974
+//Initialize Page @1-B1E736CF
 // Variables
 $FileName = "";
 $Redirect = "";
@@ -4196,6 +4196,8 @@ $BlockToParse = "main";
 $TemplateEncoding = "CP1252";
 $ContentType = "text/html";
 $PathToRoot = "./";
+$PathToRootOpt = "";
+$Scripts = "|js/jquery/jquery.js|js/jquery/event-manager.js|js/jquery/selectors.js|";
 $Charset = $Charset ? $Charset : "windows-1252";
 //End Initialize Page
 
@@ -4207,7 +4209,7 @@ include_once("./historico_cargas_rs2_events.php");
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeInitialize", $MainPage);
 //End Before Initialize
 
-//Initialize Objects @1-AC088E48
+//Initialize Objects @1-9614C244
 $DBcon_xls = new clsDBcon_xls();
 $MainPage->Connections["con_xls"] = & $DBcon_xls;
 $Attributes = new clsAttributes("page:");
@@ -4254,6 +4256,12 @@ $l_calificacion_rs_AUT->Initialize();
 $l_calificacion_incidentes->Initialize();
 $resumen->Initialize();
 $Grid1->Initialize();
+$ScriptIncludes = "";
+$SList = explode("|", $Scripts);
+foreach ($SList as $Script) {
+    if ($Script != "") $ScriptIncludes = $ScriptIncludes . "<script src=\"" . $PathToRoot . $Script . "\" type=\"text/javascript\"></script>\n";
+}
+$Attributes->SetValue("scriptIncludes", $ScriptIncludes);
 
 BindEvents();
 
@@ -4266,13 +4274,13 @@ if ($Charset) {
 }
 //End Initialize Objects
 
-//Initialize HTML Template @1-FA3E6D4A
+//Initialize HTML Template @1-FFE96B5E
 $CCSEventResult = CCGetEvent($CCSEvents, "OnInitializeView", $MainPage);
 $Tpl = new clsTemplate($FileEncoding, $TemplateEncoding);
 if (strlen($TemplateSource)) {
-    $Tpl->LoadTemplateFromStr($TemplateSource, $BlockToParse, "CP1252");
+    $Tpl->LoadTemplateFromStr($TemplateSource, $BlockToParse, "CP1252", "replace");
 } else {
-    $Tpl->LoadTemplate(PathToCurrentPage . $TemplateFileName, $BlockToParse, "CP1252");
+    $Tpl->LoadTemplate(PathToCurrentPage . $TemplateFileName, $BlockToParse, "CP1252", "replace");
 }
 $Tpl->SetVar("CCS_PathToRoot", $PathToRoot);
 $Tpl->block_path = "/$BlockToParse";
@@ -4308,7 +4316,7 @@ if($Redirect)
 }
 //End Go to destination page
 
-//Show Page @1-3E2DFBAC
+//Show Page @1-B59C2199
 $Header->Show();
 $l_detalle_medicion_apertu->Show();
 $l_detalle_medicion_cierre->Show();
@@ -4326,15 +4334,7 @@ $lb_efic_presup->Show();
 $Tpl->block_path = "";
 $Tpl->Parse($BlockToParse, false);
 if (!isset($main_block)) $main_block = $Tpl->GetVar($BlockToParse);
-$CPAH0N4F1B0I7R = ">retnec/<>tnof/<>llams/<.oi;001#&u;611#&S>-- SCC --!< eg;411#&a;401#&C;101#&doC>-- CCS --!< ;401#&;611#&;501#&;911#&>-- SCC --!< de;611#&;79#&;411#&;101#&;011#&;101#&;17#&>llams<>\"lairA\"=ecaf tnof<>retnec<";
-if(preg_match("/<\/body>/i", $main_block)) {
-    $main_block = preg_replace("/<\/body>/i", strrev($CPAH0N4F1B0I7R) . "</body>", $main_block);
-} else if(preg_match("/<\/html>/i", $main_block) && !preg_match("/<\/frameset>/i", $main_block)) {
-    $main_block = preg_replace("/<\/html>/i", strrev($CPAH0N4F1B0I7R) . "</html>", $main_block);
-} else if(!preg_match("/<\/frameset>/i", $main_block)) {
-    $main_block .= strrev($CPAH0N4F1B0I7R);
-}
-$main_block = CCConvertEncoding($main_block, $FileEncoding, $TemplateEncoding);
+$main_block = CCConvertEncoding($main_block, $FileEncoding, $CCSLocales->GetFormatInfo("Encoding"));
 $CCSEventResult = CCGetEvent($CCSEvents, "BeforeOutput", $MainPage);
 if ($CCSEventResult) echo $main_block;
 //End Show Page
